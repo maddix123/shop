@@ -5,7 +5,7 @@ Lightweight inventory management with a single-command Ubuntu installer script.
 ## Ubuntu VPS install (one script)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/your-org/shop-management-system/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/maddix123/shop-management-system/main/install.sh | bash
 ```
 
 The installer will:
