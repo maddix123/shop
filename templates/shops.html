@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <section class="panel">
+    <h2>Shops</h2>
+    <form class="stack" method="post">
+      <label>
+        Add shop
+        <input name="name" required placeholder="Shop name" />
+      </label>
+      <button type="submit">Add shop</button>
+    </form>
+    <form class="stack" method="post" action="{{ url_for('select_shop') }}">
+      <label>
+        Select active shop
+        <select name="shop_id" required>
+          <option value="" {% if not shop_id %}selected{% endif %}>None</option>
+          {% for shop in shops %}
+            <option value="{{ shop.id }}" {% if shop_id == shop.id %}selected{% endif %}>
+              {{ shop.name }}
+            </option>
+          {% endfor %}
+        </select>
+      </label>
+      <button type="submit">Set active shop</button>
+    </form>
+    <ul class="list">
+      {% for shop in shops %}
+        <li>{{ shop.name }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

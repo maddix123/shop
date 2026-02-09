@@ -1,0 +1,230 @@
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  margin: 0;
+  background: #0a0a0a;
+  color: #f5e117;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #111111;
+  border-right: 1px solid #2b2b2b;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-header h2 {
+  margin: 0 0 0.5rem;
+}
+
+.sidebar-header p {
+  margin: 0;
+  color: #f5e117;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-nav a {
+  color: #f5e117;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sidebar-logout {
+  margin-top: auto;
+}
+
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  background: #111111;
+  border-bottom: 1px solid #2b2b2b;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.site-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+}
+
+.site-header p {
+  margin: 0;
+  color: #f5e117;
+}
+
+main {
+  padding: 2rem 3rem 3rem;
+}
+
+.panel {
+  background: #141414;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid #2b2b2b;
+}
+
+th {
+  color: #f5e117;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.button,
+button {
+  background: #f5e117;
+  color: #0a0a0a;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.button:hover,
+button:hover {
+  background: #d4c414;
+}
+
+.button.secondary {
+  background: transparent;
+  color: #f5e117;
+  border: 1px solid #f5e117;
+}
+
+.button.secondary:hover {
+  background: #f5e117;
+  color: #0a0a0a;
+}
+
+.link {
+  color: #f5e117;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+input {
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid #2b2b2b;
+  background: #0a0a0a;
+  color: #f5e117;
+  font-size: 1rem;
+}
+
+select {
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid #2b2b2b;
+  background: #0a0a0a;
+  color: #f5e117;
+  font-size: 1rem;
+}
+
+.helper {
+  color: #f5e117;
+  font-size: 0.9rem;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.list li {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #2b2b2b;
+  border-radius: 0.5rem;
+}
+
+.empty-state {
+  padding: 1rem 0;
+  color: #f5e117;
+}
+
+.status {
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0.75rem;
+  font-weight: 600;
+}
+
+.status-ok {
+  background: rgba(245, 225, 23, 0.15);
+  border: 1px solid #f5e117;
+  color: #f5e117;
+}
+
+.status-error {
+  background: rgba(225, 29, 42, 0.15);
+  border: 1px solid #e11d2a;
+  color: #e11d2a;
+}
+
+.actions form button {
+  background: #e11d2a;
+  color: #ffffff;
+}
+
+.actions form button:hover {
+  background: #b9141f;
+}
+.auth-panel {
+  max-width: 420px;
+  margin: 3rem auto;
+}
