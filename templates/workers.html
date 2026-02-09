@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <section class="panel">
+    <h2>Management - Workers</h2>
+    <form class="stack" method="post">
+      <label>
+        Username
+        <input name="username" required />
+      </label>
+      <label>
+        Password
+        <input name="password" type="password" required />
+      </label>
+      <button type="submit">Add worker</button>
+    </form>
+    <ul class="list">
+      {% for worker in workers %}
+        <li>{{ worker.username }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

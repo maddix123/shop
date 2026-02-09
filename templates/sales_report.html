@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <section class="panel">
+    <h2>Sales Report</h2>
+    {% if sales %}
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Sold by</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for sale in sales %}
+            <tr>
+              <td>{{ sale.name }}</td>
+              <td>{{ sale.quantity }}</td>
+              <td>${{ "%.2f"|format(sale.total) }}</td>
+              <td>{{ sale.username }}</td>
+              <td>{{ sale.created_at }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="empty-state">No sales recorded yet.</p>
+    {% endif %}
+  </section>
+{% endblock %}

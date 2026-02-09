@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <section class="panel auth-panel">
+    <h2>Login</h2>
+    {% if error %}
+      <div class="status status-error">{{ error }}</div>
+    {% endif %}
+    <form class="stack" method="post">
+      <label>
+        Username
+        <input name="username" required />
+      </label>
+      <label>
+        Password
+        <input name="password" type="password" required />
+      </label>
+      <button type="submit">Sign in</button>
+      <p class="helper">Default admin: admin / admin123</p>
+    </form>
+  </section>
+{% endblock %}
