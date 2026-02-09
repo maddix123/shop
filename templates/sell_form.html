@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <section class="panel">
+    <h2>Record a Sale</h2>
+    <form class="stack" method="post">
+      <label>
+        Select item
+        <input
+          name="item_name"
+          list="item-options"
+          autocomplete="off"
+          placeholder="Start typing to search..."
+          required
+        />
+      </label>
+      <input type="hidden" name="item_id" id="item-id" />
+      <datalist id="item-options">
+        {% for item in items %}
+          <option
+            value="{{ item.name }}"
+            data-id="{{ item.id }}"
+            data-qty="{{ item.quantity }}"
+          ></option>
+        {% endfor %}
+      </datalist>
+      <label>
+        Quantity sold
+        <input name="quantity" type="number" min="1" step="1" required />
+      </label>
+      <div class="actions">
+        <button type="submit">Record sale</button>
+        <a href="{{ url_for('index') }}" class="link">Cancel</a>
+      </div>
+    </form>
+  </section>
+  <script>
+    const nameInput = document.querySelector('input[name="item_name"]');
+    const idInput = document.getElementById("item-id");
+    const options = Array.from(document.querySelectorAll("#item-options option"));
+
+    nameInput.addEventListener("input", () => {
+      const match = options.find((option) => option.value === nameInput.value);
+      idInput.value = match ? match.dataset.id : "";
+    });
+  </script>
+{% endblock %}

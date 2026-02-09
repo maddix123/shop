@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shop Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <h1>Shop Management System</h1>
+        <p>Track inventory, pricing, and stock levels in one place.</p>
+      </div>
+      <div class="header-actions">
+        <form action="{{ url_for('update_app') }}" method="post">
+          <button type="submit" class="button secondary">Update</button>
+        </form>
+        <a class="button secondary" href="{{ url_for('sell_item') }}">Sell</a>
+        <a class="button" href="{{ url_for('new_item') }}">Add Item</a>
+      </div>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
