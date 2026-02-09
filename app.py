@@ -94,12 +94,7 @@ def init_db() -> None:
         if existing_admin is None:
             connection.execute(
                 "INSERT INTO users (username, password, role) VALUES (?, ?, ?)",
-                ("admin", "admin", "admin"),
-            )
-        else:
-            connection.execute(
-                "UPDATE users SET password = ? WHERE username = ? AND role = 'admin'",
-                ("admin", "admin"),
+                ("admin", "admin123", "admin"),
             )
         connection.commit()
 
